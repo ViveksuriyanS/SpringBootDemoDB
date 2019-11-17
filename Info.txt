@@ -1,0 +1,51 @@
+Resources
+https://www.youtube.com/playlist?list=PLqq-6Pq4lTTbx8p2oCgcAQGQyqN8XeA1x
+https://www.petrikainulainen.net/spring-data-jpa-tutorial/
+
+To Do
+- Added Spring WEB and JPA dependencies while creating the project
+- Under Package io.<noun>
+
+- Added Entity class to define the object -> TopicDto.java
+	- @Entity annotate the class
+	- @Id to the primary key variable 
+	- Added getter and setter methods to the class member variables
+	
+- Added Controller Class to get the request and process it -> TopicsController.java
+	- @RestController annotate the class as it is RESTWeb Services
+	
+- Created TopicRepository 'Interface' 
+    - Extended to CrudRepository<Object, pk_id>
+    - Can write custom methods in the class
+    
+- To process the request we have Services -> TopicBusinessService.java
+	- @Services annotate the class
+	- Service provider
+    - @Autowired the object of TopicRepository class -> topicRepositoryObject
+    - topicRepositoryObject.findAll().forEach(topicList::add) --> getAll()
+    - topicRepositoryObject.save(Object) --> add()/update()
+    - topicRepositoryObject.getById(id) -> get(id)
+    - topicRepositoryObject.delete(id)  -> delete(id)
+
+
+REQUESTS:
+
+PUT request: http://localhost:8080/topics
+	{
+        "id": "C",
+        "name": "C",
+        "description": "C Application"
+    }
+    
+GET request: http://localhost:8080/topics
+
+GET request by ID: http://localhost:8080/topics/_id_
+
+DELETE request: http://localhost:8080/topics/_id_
+
+POST request: http://localhost:8080/topics
+	{
+        "id": "C",
+        "name": "Upgraded C ++",
+        "description": "Upgraded C++ Application"
+    }
