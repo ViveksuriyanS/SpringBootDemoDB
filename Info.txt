@@ -6,13 +6,14 @@ To Do
 - Added Spring WEB and JPA dependencies while creating the project
 - Under Package io.<noun>
 
-- Added Entity class to define the object -> TopicDto.java
+- Added Entity class to define the object -> TopicDto.java POJO Class
 	- @Entity annotate the class
 	- @Id to the primary key variable 
 	- Added getter and setter methods to the class member variables
 	
 - Added Controller Class to get the request and process it -> TopicsController.java
 	- @RestController annotate the class as it is RESTWeb Services
+	- Add the request mappings for CRUD operations
 	
 - Created TopicRepository 'Interface' 
     - Extended to CrudRepository<Object, pk_id>
